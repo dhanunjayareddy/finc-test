@@ -1,11 +1,14 @@
-# Use OpenJDK base image
-FROM openjdk:11-jre-slim
+# Use the official NGINX base image
+FROM nginx:latest
 
-# Create an app directory
-WORKDIR /app
+# Copy custom configuration, if needed (optional)
+# COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy the JAR file into the container
-COPY target/helloworld-1.0-SNAPSHOT.jar /app/helloworld.jar
+# Set up a default HTML page
+RUN echo '<h1>Hello Dhanunjay!</h1>' > /usr/share/nginx/html/index.html
 
-# Run the JAR file
-CMD ["java", "-jar", "/app/helloworld.jar"]
+# Expose the HTTP port
+EXPOSE 80
+
+# Start NGINX
+CMD ["nginx", "-g", "daemon off;"]
