@@ -41,8 +41,8 @@ jobs:
       # Step 6: Build and push Docker image
       - name: Build and Push Docker Image
         run: |
-          docker build -t your_docker_username/nginx-app:latest .
-          docker push your_docker_username/nginx-app:latest
+          docker build -t dhanureddy/nginx-app:latest .
+          docker push dhanureddy/nginx-app:latest
 
       # Step 7: Set up kubectl
       - name: Set up kubectl
