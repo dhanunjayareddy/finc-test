@@ -27,10 +27,10 @@ jobs:
           check-latest: false
 
       # Step 3: Set up Maven
-      - name: Set up Apache Maven
-        uses: s4u/maven-settings-action@v2.5.0
-        with:
-          servers: github
+      # - name: Set up Apache Maven
+      #   uses: s4u/maven-settings-action@v2.5.0
+      #   with:
+      #     servers: github
 
       # Step 4: Build with Maven
       - name: Build with Maven
